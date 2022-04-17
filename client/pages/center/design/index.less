@@ -1,0 +1,169 @@
+@pic-width: 200px;
+.ellipsis {
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+
+.user-center-design-container {
+  flex:1;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  margin: 0 100px;
+  .design-container-owns {
+    padding: 0 30px;
+    .poster-content-label{
+      padding: 20px;
+      font-size: 25px;
+      font-weight: 600;
+      color: #000;
+      padding-left: 10px;
+    }
+
+    .design-container-owns-content {
+      display: flex;
+      flex-wrap: wrap;
+      .create-new-poster-template {
+        width: 188px;
+        height: 328px;
+        margin: 20px 0;
+        border-radius: 7px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f6f7fa;
+        transition: all 0.35s linear;
+        cursor: pointer;
+        .create-img{
+          height: 80px;
+          width: 80px;
+        }
+        .create-text{
+          font-size: 14px;
+          color: #888889;
+          margin-top: 20px;
+        }
+      }
+
+      .poster-card-item-vertical {
+        cursor: pointer;
+        transition: all 0.35s linear;
+        margin: 20px 15px;
+        border-radius: 7px;
+        overflow: hidden;
+        .no-content{
+          width: 188px;
+          height: 328px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: #f6f7fa;
+          .no-content-text {
+            font-size: 14px;
+            color: #888889;
+            margin-top: 10px;
+            font-weight: 200;
+          }
+          img{
+            height: 60px;
+            width: 60px;
+          }
+        }
+        .poster-image-item{
+          width: 188px;
+          height: 328px;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+          border-radius: 7px;
+          background-color: #f6f7fa;
+          margin-bottom: 10px;
+        }
+        .poster-info-container{
+          height: 50px;
+          .unactive-container{
+            .poster-template-name{
+              padding: 0 5px;
+              line-height: 20px;
+              font-size: 14px;
+              color: #888889;
+            }
+          }
+          .active-container{
+            display: none;
+            .poster-template-name{
+              padding: 0 5px;
+              line-height: 20px;
+              font-size: 12px;
+              color: #000;
+            }
+          }
+        }
+      }
+      .poster-card-item-vertical:hover, 
+      .poster-card-item-horizontal:hover,
+      .create-new-poster-template:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 10px rgba(169,169,169,0.5);
+        .poster-image-item{
+          border-radius: 0;
+          border-top-left-radius: 7px;
+          border-top-right-radius: 7px;
+        }
+        .active-container{
+          display: block;
+        }
+        .unactive-container{
+          display: none;
+        }
+      }
+
+      .poster-card-item-horizontal {
+        .poster-image-item{
+          width: 228px;
+          height: 250px;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+          border-radius: 7px;
+          background-color: #f6f7fa;
+        }
+        .poster-info-container{
+          height: 30px;
+          .unactive-container{
+            .poster-template-name{
+              height: 40px;
+              line-height: 40px;
+              padding: 5px;
+              font-size: 14px;
+              color: #888889;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.poster-analytic-data{
+  height: 200px;
+  background-color: #f6f7fa;
+}
+
+.design-preview-modal {
+  &-content {
+    text-align: center;
+  }
+  &-content-img {
+    // height: 200px;
+    width: 100%;
+  }
+  .ant-modal-footer {
+    button:first-child {
+      display: none;
+    }
+  }
+}

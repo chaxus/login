@@ -1,0 +1,45 @@
+{
+  "name": "login-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaxus/login.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaxus/login/issues"
+  },
+  "homepage": "https://github.com/chaxus/login#readme",
+  "devDependencies": {
+    "@loadable/webpack-plugin": "^5.15.2",
+    "@types/node": "^17.0.24",
+    "@types/react": "^18.0.5",
+    "@types/react-color": "^3.0.6",
+    "@types/react-dom": "^18.0.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.4",
+    "html-webpack-plugin": "^5.5.0",
+    "ts-import-plugin": "^2.0.0",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1",
+    "webpackbar": "^5.0.2"
+  },
+  "dependencies": {
+    "@loadable/component": "^5.15.2",
+    "axios": "^0.26.1",
+    "lodash": "^4.17.21",
+    "react": "^18.0.0",
+    "react-color": "^2.19.3",
+    "react-dom": "^18.0.0",
+    "redux": "^4.1.2",
+    "redux-undo": "^1.0.1"
+  }
+}
