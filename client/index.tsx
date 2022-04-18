@@ -5,18 +5,20 @@
  * @LastEditTime: 2022-02-20 14:10:46
  */
 import * as React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import App from "./app";
 import { Provider } from "react-redux";
 import createStore from "./store";
 
 const store = createStore({})
 
-render(
+const app = document.querySelector("#app") as Element
+const root = createRoot(app)
+
+root.render(
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.querySelector("#app")
+  </Provider>
 );
 
 if (module.hot) {
