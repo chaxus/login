@@ -4,7 +4,6 @@
  * @LastEditors: ran
  * @LastEditTime: 2022-03-26 14:35:31
  */
-// 优化打包速度：https://cloud.tencent.com/developer/article/1842613
 const path = require("path");
 const LoadablePlugin = require("@loadable/webpack-plugin") ;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -40,8 +39,6 @@ export default {
     },
   },
   module: {
-    // 忽略对 min.js 文件的递归解析处理
-    noParse: [/\*.min\.js$/],
     rules: [
       {
         test: /\.(ts|tsx)?$/,
@@ -97,38 +94,21 @@ export default {
           {
             loader: "less-loader",
             options:{
-              // Inline JavaScript is not enabled. Is it set in your options?
               lessOptions: { javascriptEnabled: true }
             }
           },
         ],
       },
-      // {
-      //   test: /\.(ico|png|jpg|jpeg|svg)?$/,
-      //   use: {
-      //     loader: "url-loader",
-      //     // file-loader
-      //     options: {
-      //       publicPath:'/assets/svgs',//相对打包后index.html的图片位置
-      //       limit: 10 * 1024,
-      //       outputPath:'public/images',
-      //     },
-      //   },
-      // },
       {
         test:/\.(jpg|png|gif|ico|svg|xlsx)$/,
         type:"asset",
-        //解析
         parser: {
-          //转base64的条件
           dataUrlCondition: {
-            maxSize: 10 * 1024, // 10kb
+            maxSize: 10 * 1024,
           }
         },
         generator:{ 
-          //与output.assetModuleFilename是相同的,这个写法引入的时候也会添加好这个路径
           filename:'assets/[name].[hash:6][ext]',
-          //打包后对资源的引入，文件命名已经有/img了
           publicPath:'./'
         },
       },
@@ -141,10 +121,8 @@ export default {
     new WebpackBar(),
     new CleanWebpackPlugin(),
     new LoadablePlugin(),
-    // 参考文档：https://www.cnblogs.com/wonyun/p/6030090.html
     new HtmlWebpackPlugin({
       template: "views/index.html",
-      // inject: false,
       chunksSortMode: "none",
     }),
     new CopyWebpackPlugin({
@@ -157,9 +135,8 @@ export default {
     }),
   ],
   performance: {
-    // hints: false,
     hints: "error",
-    maxAssetSize: 430000,
+    maxAssetSize: 200000,
   },
   devtool: 'source-map',
 };
