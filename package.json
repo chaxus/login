@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "sh ./bin/dev.sh",
+    "build": "sh ./bin/build.sh",
+    "clean": "sh ./bin/clean.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,11 +27,16 @@
     "@types/react": "^18.0.5",
     "@types/react-color": "^3.0.6",
     "@types/react-dom": "^18.0.1",
+    "babel-loader": "^8.2.4",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
+    "less-loader": "^10.2.0",
     "redux-devtools-extension": "^2.13.9",
+    "style-loader": "^3.3.1",
     "ts-import-plugin": "^2.0.0",
+    "ts-loader": "^9.2.8",
     "typescript": "^4.6.3",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
@@ -37,13 +45,16 @@
   },
   "dependencies": {
     "@loadable/component": "^5.15.2",
+    "auto-import-less": "^0.0.5",
     "axios": "^0.26.1",
     "lodash": "^4.17.21",
     "react": "^18.0.0",
     "react-color": "^2.19.3",
     "react-dom": "^18.0.0",
+    "react-redux": "^8.0.0",
     "react-router-dom": "^6.3.0",
     "redux": "^4.1.2",
-    "redux-undo": "^1.0.1"
+    "redux-undo": "^1.0.1",
+    "ts-node": "^10.7.0"
   }
 }

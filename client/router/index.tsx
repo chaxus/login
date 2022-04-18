@@ -7,15 +7,6 @@
 import React from 'react'
 import loadable from '@loadable/component';
 import Loading from '@/components/loading';
-import {
-  FileImageOutlined,
-  BarChartOutlined,
-  SolutionOutlined,
-  CodepenOutlined,
-  DribbbleOutlined,
-  ArrowRightOutlined,
-  FileDoneOutlined
-} from '@ant-design/icons'
  
 const page = (component: string) => {
   const Element = loadable(() => import(`@/pages/${component}/index`), {
@@ -24,76 +15,22 @@ const page = (component: string) => {
   return <Element />
 } 
 
-const defaultRoute = [
-  {
-    name: '数据查看',
-    path: 'dashboard',
-    icon: BarChartOutlined,
-    element: page('dashboard'),
-    // element:<Dashboard/>
-  },
-  {
-    name: '生成列表',
-    path: 'poster',
-    icon: FileImageOutlined,
-    element: page('posterList'),
-    // element: <PosterList />
-  },
-  {
-    name: '模板管理',
-    path: 'template',
-    icon: SolutionOutlined,
-    element: page('templateList'),
-  },
-  {
-    name: '服务管理',
-    path: 'service',
-    icon: CodepenOutlined,
-    element: page('serviceList'),
-  },
-  {
-    name: '域名白名单',
-    path: 'picture-domain',
-    icon: DribbbleOutlined,
-    element: page('picDomain'),
-  },
-  {
-    path: 'painter',
-    element: page('painter'),
-  },
-];
 
-const centerRoute = [
+const route = [
   {
-    name: '用户端',
-    path: '',
-    icon: ArrowRightOutlined,
+    path:'/',
+    element: page('login'),
+    name: '登录页',
   },
   {
-    path: 'center',
-    children: [{
-      path: 'design',
-      element: page('center/design')
-    }, {
-      path: 'material',
-      element: page('center/material')
-    }]
-  }
-]
-
-const logRoute = [
-  {
-    path: 'logService',
-    element: page('logService'),
-    name: '日志服务',
+    path: 'login',
+    element: page('login'),
+    name: '登录页',
     showByAuth:true,
-    icon:FileDoneOutlined
   },
 ]
 
 const routes = [
-  ...defaultRoute,
-  ...centerRoute,
-  ...logRoute,
+  ...route,
 ];
 export default routes

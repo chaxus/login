@@ -14,21 +14,4 @@
 # all
 
 bin=./node_modules/.bin
-param=$1
-app="app"
-client="client"
-startApp() {
-    $bin/cross-env NODE_ENV=local $bin/nodemon ./app/index.ts
-}
-startClient() {
-    $bin/webpack-dev-server --config ./webpack.dev.ts
-}
-if [[ $param == $app ]]; then
-    startApp
-fi
-if [[ $param == $client ]]; then
-    startClient
-fi
-if [[ $param == "" ]]; then
-    startApp & startClient
-fi
+$bin/webpack-dev-server --config ./webpack.dev.ts

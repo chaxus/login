@@ -40,7 +40,7 @@ declare global {
     icon?: any,
     redirect?: H.LocationDescriptor,
     children?: Array<RoutConfigType>,
-    element?: React.ComponentType,
+    element?: React.ReactNode | null,
     showByAuth?:boolean,
   };
   declare interface Window {
