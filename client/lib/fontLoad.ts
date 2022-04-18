@@ -15,7 +15,7 @@ export const loadFontFamily = (fontFamily: string, cb: () => void) => {
       cb()
     }
   } else {
-    const font = fontList.find(item => item.fontFamily === fontFamily)
+    const font = fontList.find((item: { fontFamily: string }) => item.fontFamily === fontFamily)
     if (!font) {
       return console.log(`暂不支持字体:${fontFamily}`)
     }
@@ -39,7 +39,7 @@ export const loadFontFamilys = (fontFamilys: any[]) => {
     let fontFamily = fontFamilys[i]
     let hasFont = document.fonts.check(`12px ${fontFamily}`)
     if (!hasFont) {
-      const font = fontList.find(item => item.fontFamily === fontFamily)
+      const font = fontList.find((item: { fontFamily: any }) => item.fontFamily === fontFamily)
       if (!font) {
         loadFontArr.push(Promise.reject(new Error(`暂不支持字体:${fontFamily}`)))
       } else {

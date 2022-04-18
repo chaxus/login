@@ -162,22 +162,4 @@ export default {
     maxAssetSize: 430000,
   },
   devtool: 'source-map',
-  devServer: {
-    historyApiFallback: true,
-    static: {
-      directory: resolve('./'),
-    },
-    port: 30102,
-    host: '127.0.0.1',
-    open: true,  // 自动打开浏览器
-    compress: true,  // 启动 gzip 压缩
-    proxy: {
-        '/api': {
-            target: 'http://127.0.0.1:30103',
-            changeOrigin: true,
-            secure: false,
-            logLevel: 'debug',
-        },
-    },
-  },
 };
