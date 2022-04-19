@@ -1,38 +1,24 @@
-import React from 'react'
+/*
+ * @Author: ran
+ * @Date: 2022-04-19 18:12:04
+ * @LastEditors: ran
+ * @LastEditTime: 2022-04-19 18:33:23
+ */
+import React from "react";
+// import LoginForm from '@/components/loginform'
+// import Glassback from '@/components/glassback'
 
 const Login = () => {
-
-    return <div className='login'>
-        <div className="g-bg">
-            <div className="g-polygon g-polygon-1"></div>
-            <div className="g-polygon g-polygon-2"></div>
-            <div className="g-polygon g-polygon-3"></div>
-        </div>
-        <div className="background">
-            <div className="shape"></div>
-            <div className="shape"></div>
-        </div>
-
-        <form>
-            <h3>Login | 登录</h3>
-            <label htmlFor="username">用户名</label>
-            <input type="text" placeholder="Email or Phone" id="username" />
-
-            <label htmlFor="password">密码</label>
-            <input type="password" placeholder="Password" id="password" />
-            <button>登录</button>
-            <div className="social">
-                {/* <a href="http://"> */}
-                <div className="go"><i className="fas fa-gamepad"></i>游戏</div>
-                {/* </a> */}
-                {/* <a href="http://"> */}
-                <div className="fb"><i className="far fa-comments"></i>联系</div>
-                {/* </a> */}
-            </div>
-        </form>
-
-
+  return (
+    <div className="login">
+      <div className="glassback">
+        <div className="glassback-bg"></div>
+        <div className="glassback-bg_polygon"></div>
+      </div>
+      {/* <Glassback /> */}
+      {/* <LoginForm /> */}
     </div>
-}
+  );
+};
 
-export default Login
+export default Login;
