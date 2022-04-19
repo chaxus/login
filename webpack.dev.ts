@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-19 17:56:26
- * @LastEditTime: 2022-03-09 21:01:45
+ * @LastEditTime: 2022-04-19 19:10:51
  * @LastEditors: ran
  */
 import baseConfig from './webpack.config'
@@ -20,7 +20,7 @@ const devConfig = {
             directory: resolve('./'),
           },
           port: 30104,
-          host: '127.0.0.1',
+          host: 'localhost',
           open: true, 
           compress: true,
           proxy: {
