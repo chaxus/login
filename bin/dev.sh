@@ -2,7 +2,7 @@
 # @Author: ran
 # @Date: 2022-01-30 17:33:07
  # @LastEditors: ran
- # @LastEditTime: 2022-03-26 13:14:00
+ # @LastEditTime: 2022-04-20 20:56:50
 ###
 
 #client
@@ -15,3 +15,4 @@
 
 bin=./node_modules/.bin
 $bin/webpack-dev-server --config ./webpack.dev.ts
+

@@ -2,22 +2,20 @@
  * @Author: ran
  * @Date: 2022-04-19 18:20:47
  * @LastEditors: ran
- * @LastEditTime: 2022-04-19 18:32:01
+ * @LastEditTime: 2022-04-20 20:17:30
  */
-import React from 'react'
+import React from "react";
 
 const Glassback = () => {
-    return <div className='glassback'>
-        <div className="g-bg">
-            <div className="g-polygon g-polygon-1"></div>
-            <div className="g-polygon g-polygon-2"></div>
-            <div className="g-polygon g-polygon-3"></div>
-        </div>
-        <div className="background">
-            <div className="shape"></div>
-            <div className="shape"></div>
-        </div>
+  return (
+    <div className="glassback">
+      <div className="glassback-bg">
+        <div className="glassback-bg_polygon1"></div>
+        <div className="glassback-bg_polygon2"></div>
+        <div className="glassback-bg_polygon3"></div>
+      </div>
     </div>
-}
+  );
+};
 
-export default Glassback
+export default Glassback;

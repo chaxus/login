@@ -2,7 +2,7 @@
  * @Author: ran
  * @Date: 2022-02-14 16:09:18
  * @LastEditors: ran
- * @LastEditTime: 2022-03-26 14:35:31
+ * @LastEditTime: 2022-04-20 20:58:58
  */
 const path = require("path");
 const LoadablePlugin = require("@loadable/webpack-plugin") ;
@@ -127,6 +127,10 @@ export default {
     }),
     new CopyWebpackPlugin({
       patterns: [
+        {
+          from: resolve("client/assets/js/css-doodle.min.js"),
+          to: resolve("public/js"),
+        },
         {
           from: resolve("client/assets/images/favicon.ico"),
           to: resolve("public/images"),

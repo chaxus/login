@@ -2,7 +2,7 @@
  * @Author: ran
  * @Date: 2022-01-30 23:01:57
  * @LastEditors: ran
- * @LastEditTime: 2022-02-28 17:20:13
+ * @LastEditTime: 2022-04-20 20:39:17
 */
 
 declare module '@/lib/*'
@@ -51,5 +51,11 @@ declare global {
     jsonlint: any
     userInfo: IUserInfo,
     psdjs: any,
+  }
+
+  declare namespace JSX {
+    interface IntrinsicElements {
+      'css-doodle': any
+    }
   }
 

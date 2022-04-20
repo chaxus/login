@@ -2,13 +2,12 @@
  * @Author: ran
  * @Date: 2022-04-19 18:15:57
  * @LastEditors: ran
- * @LastEditTime: 2022-04-19 18:23:52
+ * @LastEditTime: 2022-04-20 20:47:25
  */
 import React from 'react'
 
 const LoginForm = () => {
-    return <div className='login-form'>
-         <form>
+    return <form className='form'>
             <h3>Login | 登录</h3>
             <label htmlFor="username">用户名</label>
             <input type="text" placeholder="Email or Phone" id="username" />
@@ -25,7 +24,6 @@ const LoginForm = () => {
                 {/* </a> */}
             </div>
         </form>
-    </div>
 }
 
 export default LoginForm

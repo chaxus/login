@@ -1,98 +1,52 @@
-*,
-*:before,
-*:after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    // background-color: #080710;
-    // background: rgba(255, 255, 255, .3);
-    // backdrop-filter: blur(10px);
-    .g-bg {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        
-        & > div {
-            position: absolute;
-            opacity: .5;
-        }
-        
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            backdrop-filter: blur(150px);
-            z-index: 1;
-        }
+.glassback {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    .polygon {
+      position: absolute;
+      opacity: 0.5;
     }
-    
-    .g-polygon-1 {
-        bottom: 100px;
+    &-bg {
+      &_polygon1 {
+        .polygon();
+        bottom: 30vh;
         left: 50%;
         transform: translate(-50%, 0);
-        width: 714px;
-        height: 390px;
+        width: 70vw;
+        height: 70vh;
         background: linear-gradient(#ffee55, #fdee99);
         clip-path: polygon(0 10%, 30% 0, 100% 40%, 70% 100%, 20% 90%);
-    }
-    
-    .g-polygon-2 {
+      }
+      &_polygon2 {
+        .polygon();
         bottom: 0px;
         left: 30%;
         transform: translate(-50%, 0);
-        width: 1000px;
-        height: 450px;
-        background: linear-gradient(-36deg, #E950D1, #f980D9);
+        width: 70vw;
+        height: 70vh;
+        background: linear-gradient(-36deg, #e950d1, #f980d9);
         clip-path: polygon(10% 0, 100% 70%, 100% 100%, 20% 90%);
-    }
-    
-    .g-polygon-3 {
+      }
+      &_polygon3 {
+        .polygon();
         bottom: 0px;
         left: 70%;
         transform: translate(-50%, 0);
-        width: 1000px;
-        height: 450px;
+        width: 70vw;
+        height: 70vh;
         background: rgba(87, 80, 233);
         clip-path: polygon(80% 0, 100% 70%, 100% 100%, 20% 90%);
+      }
     }
-}
-
-.background {
-    width: 430px;
-    height: 520px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-
-
-
-}
-
-.background .shape {
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    border-radius: 50%;
-}
-
-.shape:first-child {
-    background: linear-gradient(#1845ad,
-            #23a2f6);
-    left: -80px;
-    top: -80px;
-}
-
-.shape:last-child {
-    background: linear-gradient(to right,
-            #ff512f,
-            #f09819);
-    right: -30px;
-    bottom: -80px;
-}
+    &-bg::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      backdrop-filter: blur(130px);
+      z-index: 1;
+    }
+  }
+  
