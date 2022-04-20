@@ -2,7 +2,7 @@
  * @Author: ran
  * @Date: 2022-02-14 16:09:18
  * @LastEditors: ran
- * @LastEditTime: 2022-04-20 20:58:58
+ * @LastEditTime: 2022-04-20 21:06:00
  */
 const path = require("path");
 const LoadablePlugin = require("@loadable/webpack-plugin") ;
@@ -138,9 +138,9 @@ export default {
       ],
     }),
   ],
-  performance: {
-    hints: "error",
-    maxAssetSize: 200000,
-  },
+  // performance: {
+  //   hints: "error",
+  //   maxAssetSize: 200000,
+  // },
   devtool: 'source-map',
 };
