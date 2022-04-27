@@ -1,5 +1,5 @@
 .form {
-  height: 520px;
+  // height: 520px;
   width: 400px;
   background-color: rgba(255, 255, 255, 0.6);
   position: absolute;
@@ -25,13 +25,14 @@
     font-weight: 500;
     line-height: 42px;
     text-align: center;
-    color: #2363FE;
+    color: #262626;
   }
   label {
     display: block;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
+    color: #8c8c8c;
   }
 
   input {
@@ -39,20 +40,25 @@
     height: 50px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.07);
-    border-radius: 3px;
+    // background-color: white;
+    // border-radius: 3px;
+    color: #8c8c8c;
     padding: 0 10px;
     margin-top: 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
+    border-bottom: 1px solid #bfbfbf;
+    font-family: PingFangSC-Regular, PingFang SC, serif;
   }
   ::placeholder {
-    color: #e5e5e5;
+    color: #8c8c8c;
+    font-family: PingFangSC-Regular, PingFang SC, serif;
   }
   button {
     margin-top: 50px;
     width: 100%;
-    background-color: #ffffff;
-    color: #080710;
+    background-color: white;
+    color: #8c8c8c;
     padding: 15px 0;
     font-size: 18px;
     font-weight: 600;
@@ -69,12 +75,12 @@
       width: 150px;
       border-radius: 3px;
       padding: 5px 10px 10px 5px;
-      background-color: rgba(255, 255, 255, 0.27);
-      color: #eaf0fb;
+      background-color: #f5f5f5;
+      color: #bfbfbf;
       text-align: center;
     }
     div:hover {
-      background-color: rgba(255, 255, 255, 0.47);
+      background-color: rgba(255, 255, 255, 1);
     }
     i {
       margin-right: 4px;
@@ -84,4 +90,7 @@
     }
     
   }
+}
+iframe{
+  display: none;
 }

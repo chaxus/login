@@ -1,8 +1,8 @@
 /*
  * @Author: ran
  * @Date: 2021-07-13 19:23:10
- * @LastEditTime: 2022-02-20 15:37:33
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-04-27 11:36:59
+ * @LastEditors: ran
  */
 
 import { ActionCreators as UndoActionCreators } from 'redux-undo';
@@ -19,7 +19,6 @@ export const bindActions = (extraActions = {}) => (dispatch:Dispatch) => bindAct
 
 export const bindState = (state:any) => ({
   ...state,
-  drawData: state.drawData.present,
   canUndo: state.drawData.past.length > 1,
   canRedo: state.drawData.future.length > 0,
 });

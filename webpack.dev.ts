@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-19 17:56:26
- * @LastEditTime: 2022-04-20 21:03:12
+ * @LastEditTime: 2022-04-27 14:24:08
  * @LastEditors: ran
  */
 import baseConfig from './webpack.config'
@@ -25,7 +25,7 @@ const devConfig = {
           compress: true,
           proxy: {
             '/api': {
-                target: 'http://127.0.0.1:30103',
+                target: 'http://entry.ranzhouhang.com/',
                 changeOrigin: true,
                 secure: false,
                 logLevel: 'debug',
