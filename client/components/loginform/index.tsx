@@ -1,21 +1,21 @@
 /*
  * @Author: ran
  * @Date: 2022-04-19 18:15:57
- * @LastEditors: ran
- * @LastEditTime: 2022-04-27 14:30:23
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-05-05 00:41:18
  */
-import React from "react";
+import React, { useState } from "react";
 import { bindActions, bindState } from "@/lib/redux";
 import { connect } from "react-redux";
 import Warrning from '@/components/warnning'
-
-interface userInfo {
-  name: string,
-  password: string
-}
+import JSEncrypt from 'jsencrypt'
 
 const LoginForm = (props: any) => {
   const { post, get } = props;
+  const [opacity, setOpacity] = useState({
+    name:true,
+    password:true
+  })
   // 表单提交
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     // post('/api/users/login', { })
@@ -27,7 +27,9 @@ const LoginForm = (props: any) => {
         result[name] = value
       }
     }
-    encryption(JSON.stringify(result))
+    if(result.name && result.password){
+      encryption(JSON.stringify(result))
+    }
     // logintoken(result)
     event.preventDefault();
     return false
@@ -38,7 +40,10 @@ const LoginForm = (props: any) => {
       const { success, data } = await get("/api/generate/key ");
       if (success) {
         const { token } = data
-        console.log('---->', token, userstring)
+        const encrypt = new JSEncrypt();
+        encrypt.setPublicKey(token);
+        const encrypted = encrypt.encrypt(userstring);
+        logintoken({token:`${token}#${encrypted}`})
       }
 
     } catch (error) {
@@ -48,12 +53,31 @@ const LoginForm = (props: any) => {
   const valid = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     const { value } = e.target
     if (value.length === 0) {
-
+      setOpacity({ ...opacity, name: false})
+    }
+  }
+  const change = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    const { value } = e.target
+    if (value.length > 0 && !opacity.name) {
+      setOpacity({ ...opacity, name: true})
+    }
+  }
+  const passValid = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    const { value } = e.target
+    if (value.length === 0) {
+      setOpacity({ ...opacity, password: false})
+    }
+  }
+  const passChange = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    const { value } = e.target
+    if (value.length > 0 && !opacity.password) {
+      setOpacity({ ...opacity, password: true})
     }
   }
   const logintoken = async (params: Record<string, string>) => {
     try {
       const result = await post("/api/users/logintoken", params);
+      console.log('result---->',result)
       const { success, data } = result;
       if (success) {
 
@@ -62,6 +86,7 @@ const LoginForm = (props: any) => {
 
     }
   }
+  const { name, password } = opacity
   return (
     <>
       <form
@@ -77,8 +102,9 @@ const LoginForm = (props: any) => {
           name="name"
           autoComplete="off"
           onBlur={valid}
+          onChange={change}
         />
-        <Warrning message="Please input your username!"/>
+        <Warrning message="Please input your username!" opacity={name}/>
         <label htmlFor="password">密码</label>
         <input
           id="password"
@@ -86,8 +112,10 @@ const LoginForm = (props: any) => {
           placeholder="Password"
           name="password"
           autoComplete="off"
+          onBlur={passValid}
+          onChange={passChange}
         />
-        <Warrning />
+        <Warrning message="Please input your password!" opacity={password}/>
         <button type="submit">Login</button>
         {/* <div className="social">
                 <a href="http://">
