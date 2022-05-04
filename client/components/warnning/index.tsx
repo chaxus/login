@@ -5,7 +5,7 @@ interface warnning {
 }
 
 const warnning = ({ message }:warnning) => {
-    return <div className={'warning'}>
+    return <div className='warning error qwe'>
         { message }
     </div>
 }
