@@ -28,6 +28,7 @@
     "@types/react": "^18.0.5",
     "@types/react-color": "^3.0.6",
     "@types/react-dom": "^18.0.1",
+    "auto-require-css": "^0.0.4",
     "babel-loader": "^8.2.4",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.4",
@@ -48,7 +49,6 @@
   },
   "dependencies": {
     "@loadable/component": "^5.15.2",
-    "auto-import-less": "^0.0.5",
     "axios": "^0.26.1",
     "lodash": "^4.17.21",
     "react": "^18.0.0",

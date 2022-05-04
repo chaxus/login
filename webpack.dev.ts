@@ -25,7 +25,8 @@ const devConfig = {
           compress: true,
           proxy: {
             '/api': {
-                target: 'http://entry.ranzhouhang.com/',
+                // target: 'http://entry.ranzhouhang.com/',
+                target: 'http://localhost:30103/',
                 changeOrigin: true,
                 secure: false,
                 logLevel: 'debug',

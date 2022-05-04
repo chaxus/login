@@ -69,7 +69,12 @@ export default {
       },
       {
         test: /\.(js|jsx|tsx)?$/,
-        use: ["auto-import-less"],
+        use: [{
+          loader:"auto-require-css",
+          options:{
+            mode:'module'
+          }
+        }],
       },
       {
         test: /\.css$/,
@@ -79,6 +84,11 @@ export default {
           },
           {
             loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[local]-[hash:base64:5]",
+              }
+            },
           },
         ],
       },
@@ -90,6 +100,11 @@ export default {
           },
           {
             loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[local]-[hash:base64:5]",
+              }
+            },
           },
           {
             loader: "less-loader",
