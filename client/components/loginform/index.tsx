@@ -18,7 +18,6 @@ const LoginForm = (props: any) => {
   })
   // 表单提交
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
-    // post('/api/users/login', { })
     const result: Record<string, string> = {}
     const form = event.target as HTMLFormElement;
     for (const item of form.children) {
