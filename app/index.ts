@@ -1,25 +1,32 @@
-import Koa from 'koa'
+/*
+ * @Author: ran
+ * @Date: 2022-05-19 21:22:52
+ * @LastEditors: ran
+ * @LastEditTime: 2022-05-19 21:50:52
+ */
+import Koa, { Context } from 'koa';
+import Router from 'koa-router';
+import * as fs from 'fs'
+import * as path from 'path'
 import content from './client'
-// import serve from 'koa-static'
-
+import serve from 'koa-static'
 
 const app = new Koa();
+const router = new Router();
 
-app.use(ctx => {
-    ctx.body = `
-    <html>
-    <head>
-      <title>ssr</title>
-    </head>
-    <body>
-      <div id="root">${content}</div>
-    </body>
-  </html>
-    `;
-  });
-// 服务的静态文件地址，所以打开 localhost:3000 访问的时候就会默认在该目录下找对应的 index.html 文件。如果没有配置该选项，访问会报 404。
-// app.use(serve(__dirname + '/example')); 
+const template = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf8');
 
-app.listen(30102, () => {
-    console.log('Example app listening on port 30102!\n');
+router.get('/', (ctx: Context) => {
+  ctx.type = 'html';
+  ctx.body = template;
 });
+
+app.use(router.routes());
+
+app.use(serve(path.resolve(__dirname, '../dist')));
+app.use(serve(path.resolve(__dirname, '../')));
+
+app.listen(30102);
+
+console.log('Application is running on http://localhost:30102');
+

@@ -35,7 +35,7 @@
       "@/pages": ["client/pages"],
       "@/utils": ["client/utils"],
       "@/assets": ["client/assets"],
-      "@/components": ["client/components/*"],
+      "@/components": ["./client/components"],
       "@/common": ["client/common"],
       "@/client": ["client"],
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */

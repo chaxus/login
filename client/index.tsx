@@ -1,8 +1,8 @@
 /*
  * @Author: ran
  * @Date: 2022-02-11 18:50:32
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-02-20 14:10:46
+ * @LastEditors: ran
+ * @LastEditTime: 2022-05-19 21:40:44
  */
 import * as React from "react";
 import { createRoot } from "react-dom/client";
@@ -21,6 +21,3 @@ root.render(
   </Provider>
 );
 
-if (module.hot) {
-  module.hot.accept();
-}
