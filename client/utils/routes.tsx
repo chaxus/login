@@ -9,6 +9,7 @@ import {
     Navigate,
     Route,
   } from "react-router-dom";
+import { RoutConfigType } from '../../typings';
 type RProps = {
     routes?: RoutConfigType[];
     parentPath?: string;

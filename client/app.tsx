@@ -6,7 +6,7 @@
  */
 import React from "react";
 import { BrowserRouter, Routes } from "react-router-dom";
-import { routesComponent } from "@/utils/routes";
+import { routesComponent } from "./utils/routes";
 import routes from "@/router";
 
 

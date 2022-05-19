@@ -22,7 +22,7 @@ export default {
     index: DIST_PATH,
   },
   output: {
-    filename: "bundle.js",
+    filename: '[name].bundle.js',
     path: resolve("dist"),
   },
   resolve: {

@@ -5,6 +5,9 @@
  * @LastEditTime: 2022-04-20 20:39:17
 */
 
+import { Path } from "typescript";
+import { To } from 'react-router-dom'
+
 declare module '@/lib/*'
 declare module '@/client/*'
 declare module '@/router'
@@ -14,12 +17,10 @@ declare module '@/assets/*'
 declare module '@/components/*'
 declare module '@/common/*'
 declare module '*.png'
-declare global {
-    interface IResponseError {
-      message: string;
-      code?: number;
-      detail?: any;
-    }
+  declare interface IResponseError {
+    message: string;
+    code?: number;
+    detail?: any;
   }
   declare interface NodeModule {
     cacheable: any,
@@ -38,20 +39,20 @@ declare global {
     path?: string,
     name?: string,
     icon?: any,
-    redirect?: H.LocationDescriptor,
+    redirect?: To,
     children?: Array<RoutConfigType>,
     element?: React.ReactNode | null,
     showByAuth?:boolean,
   };
-  declare interface Window {
-    userInfo: IUserInfo
-    __INITIAL_STATE__: {
-      env: 'local' | 'test' | 'staging' | 'prod'
-    },
-    jsonlint: any
-    userInfo: IUserInfo,
-    psdjs: any,
-  }
+  // declare interface Window {
+  //   userInfo: IUserInfo
+  //   __INITIAL_STATE__: {
+  //     env: 'local' | 'test' | 'staging' | 'prod'
+  //   },
+  //   jsonlint: any
+  //   userInfo: IUserInfo,
+  //   psdjs: any,
+  // }
 
   declare namespace JSX {
     interface IntrinsicElements {

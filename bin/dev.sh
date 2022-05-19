@@ -14,5 +14,6 @@
 # all
 
 bin=./node_modules/.bin
-$bin/webpack serve --config ./webpack.dev.ts
+# $bin/webpack serve --config ./webpack.dev.ts
+$bin/cross-env NODE_ENV=local $bin/nodemon ./app/index.ts
 
